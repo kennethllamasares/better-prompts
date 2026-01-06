@@ -1,5 +1,10 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Chat bubble -->
+  <path d="M3 4C3 2.9 3.9 2 5 2H19C20.1 2 21 2.9 21 4V14C21 15.1 20.1 16 19 16H13L9 20V16H5C3.9 16 3 15.1 3 14V4Z" fill="currentColor" opacity="0.3"/>
+  <path d="M3 4C3 2.9 3.9 2 5 2H19C20.1 2 21 2.9 21 4V14C21 15.1 20.1 16 19 16H13L9 20V16H5C3.9 16 3 15.1 3 14V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Sparkle -->
+  <path d="M7 6L8 8L10 7L8 8L7 10L8 8L6 7L8 8L7 6Z" fill="currentColor"/>
+  <!-- Code bracket /> -->
+  <path d="M13 8L15 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M16 8L18 10L16 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
