@@ -2,7 +2,7 @@
   "name": "better-prompts",
   "displayName": "Better Prompts for AI Coding Assistants",
   "description": "Transform simple inputs into optimized prompts for Claude Code, Cursor, Copilot, and other AI coding assistants",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "kennethllamasares",
   "icon": "icon.png",
   "license": "MIT",
