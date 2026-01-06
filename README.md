@@ -50,7 +50,7 @@ code --install-extension better-prompts-0.1.0.vsix
 
 ### From Source
 ```bash
-git clone https://github.com/YOUR_USERNAME/better-prompts.git
+git clone https://github.com/kennethllamasares/better-prompts.git
 cd better-prompts
 npm install
 npm run compile
