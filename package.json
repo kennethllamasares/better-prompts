@@ -1,0 +1,193 @@
+{
+  "name": "better-prompts",
+  "displayName": "Better Prompts for AI Coding Assistants",
+  "description": "Transform simple inputs into optimized prompts for Claude Code, Cursor, Copilot, and other AI coding assistants",
+  "version": "0.1.0",
+  "publisher": "better-prompts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kennethllamasares/better-prompts"
+  },
+  "bugs": {
+    "url": "https://github.com/kennethllamasares/better-prompts/issues"
+  },
+  "homepage": "https://github.com/kennethllamasares/better-prompts#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ai",
+    "prompt",
+    "claude",
+    "cursor",
+    "copilot",
+    "llm",
+    "assistant"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "better-prompts",
+          "title": "Better Prompts",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "better-prompts": [
+        {
+          "type": "webview",
+          "id": "betterPrompts.sidebar",
+          "name": "Prompt Builder"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "betterPrompts.openSidebar",
+        "title": "Better Prompts: Open Prompt Builder"
+      },
+      {
+        "command": "betterPrompts.quickPrompt",
+        "title": "Better Prompts: Quick Prompt from Selection"
+      },
+      {
+        "command": "betterPrompts.fixThis",
+        "title": "Better Prompts: Fix This Code"
+      },
+      {
+        "command": "betterPrompts.explainThis",
+        "title": "Better Prompts: Explain This Code"
+      },
+      {
+        "command": "betterPrompts.improveThis",
+        "title": "Better Prompts: Improve This Code"
+      },
+      {
+        "command": "betterPrompts.testThis",
+        "title": "Better Prompts: Write Tests for This"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "betterPrompts.submenu",
+          "group": "betterPrompts"
+        }
+      ],
+      "betterPrompts.submenu": [
+        {
+          "command": "betterPrompts.fixThis",
+          "group": "1_actions"
+        },
+        {
+          "command": "betterPrompts.explainThis",
+          "group": "1_actions"
+        },
+        {
+          "command": "betterPrompts.improveThis",
+          "group": "1_actions"
+        },
+        {
+          "command": "betterPrompts.testThis",
+          "group": "1_actions"
+        },
+        {
+          "command": "betterPrompts.quickPrompt",
+          "group": "2_custom"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "betterPrompts.submenu",
+        "label": "Better Prompts"
+      }
+    ],
+    "configuration": {
+      "title": "Better Prompts",
+      "properties": {
+        "betterPrompts.enhancementMode": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "ruleOnly",
+            "auto",
+            "manual"
+          ],
+          "enumDescriptions": [
+            "Rule-based only (free, works offline)",
+            "Auto-detect available LLM and use its API",
+            "Manually configure API provider"
+          ],
+          "description": "How to enhance prompts"
+        },
+        "betterPrompts.manualProvider": {
+          "type": "string",
+          "default": "ollama",
+          "enum": [
+            "ollama",
+            "anthropic",
+            "openai"
+          ],
+          "enumDescriptions": [
+            "Ollama - Free, local AI (no API key needed)",
+            "Anthropic - Claude API (requires API key)",
+            "OpenAI - GPT API (requires API key)"
+          ],
+          "description": "API provider for manual mode"
+        },
+        "betterPrompts.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for manual provider (stored securely)"
+        },
+        "betterPrompts.ollamaEndpoint": {
+          "type": "string",
+          "default": "http://localhost:11434",
+          "description": "Ollama API endpoint for local models"
+        },
+        "betterPrompts.ollamaModel": {
+          "type": "string",
+          "default": "llama3.2",
+          "description": "Ollama model to use (e.g., llama3.2, mistral, codellama, phi3)"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "betterPrompts.quickPrompt",
+        "key": "ctrl+shift+p ctrl+shift+b",
+        "mac": "cmd+shift+p cmd+shift+b",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "build": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+*.vsix
+
+# VS Code test
+.vscode-test/
+
+# Environment and secrets - NEVER commit these
+.env
+.env.*
+*.env
+.secret
+*.secret
+secrets/
+credentials.json
+**/api-key*
+**/apikey*
+**/*key*.txt
+**/*token*.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Optional: local config overrides
+.vscode/settings.json
